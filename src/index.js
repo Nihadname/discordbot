@@ -8,6 +8,7 @@ const client = new Client({
         IntentsBitField.Flags.MessageContent
     ],
 });
+const postiveResponses=["good luck life is okay","everything that you do is great dont make yourself unmotivated"]
 client.once('ready', (c) => {
     console.log(`${c.user.tag} is online`);
     });
@@ -15,8 +16,15 @@ client.once('ready', (c) => {
         if(message.author.bot){
             return;
         }
-        if(message.content==="hello"){
-            message.reply("hello")
+        if(message.content==="fuck you"){
+            message.reply("you too")
         }
-    })
+        if(message.content==="$inspire"){
+            const randomIndex = Math.floor(Math.random() * postiveResponses.length);
+            message.reply(postiveResponses[randomIndex]);
+        }
+        if(message.content[length-1]==message[length-1]){
+            message.reply(message);
+        }
+   })
 client.login(process.env.token)
